@@ -1,7 +1,7 @@
 ---
 title:  "Kraken Engine Docs Site"
 published: true
-permalink: news/kraken-docs-site
+permalink: kraken-docs-launch
 summary: "The docs.kraken.com site is under development."
 tags: [news]
 ---
