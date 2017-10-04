@@ -2,10 +2,10 @@
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
-topnav_title: Kraken Documentation
+topnav_title: Kraken Engine SDK
 # this appears on the top navigation bar next to the home button
 
-site_title: Kraken Documentation
+site_title: Kraken Engine SDK
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
 company_name: Kearwood Software
@@ -29,7 +29,7 @@ exclude:
   - vendor
 # these are the files and directories that jekyll will exclude from the build
 
-feedback_subject_line: Kraken Documentation
+feedback_subject_line: Kraken Engine SDK
 
 feedback_email: kearwood@kearwood.com
 # used as a contact email for the Feedback link in the top navigation bar
@@ -93,12 +93,8 @@ defaults:
 
 sidebars:
 - home_sidebar
-- mydoc_sidebar
-- product1_sidebar
-- product2_sidebar
-- other
 
-description: "Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features."
+description: "Kraken Engine SDK Documentation"
 # the description is used in the feed.xml file
 
 # needed for sitemap.xml file only

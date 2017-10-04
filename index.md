@@ -3,7 +3,7 @@ title: Getting started with Kraken Engine
 keywords: sample homepage
 tags: [getting_started]
 sidebar: sdk_sidebar
-permalink: index.html
+permalink: /
 summary: How to get started with Kraken Engine
 ---
 
