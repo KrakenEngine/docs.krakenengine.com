@@ -1,5 +1,5 @@
 ---
-title:  "Kraken Engine Source Branche, Hydra Math Library"
+title:  " ource Branches, Hydra Math Library, Asynchronous API"
 published: true
 permalink: 2018-07-29-kraken-update
 summary: "Build system update, new source branches, Asynchronous API design"
