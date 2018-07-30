@@ -12,7 +12,7 @@ The dust is starting to settle after setting up CMake to build the Kraken runtim
 
 ## Hello, Hydra
 
-The Kraken math library has been broken out into a separate project, [Hydra](https://github.com/KrakenEngine/hydra).  The CMake scripts statically link this in Kraken runtime builds; however it can now be used indepedently as well.  As part of this refactoring, I have changed all Hydra datatypes to POD data types.  This means we can't have constructors and destructors, so I have implemented "Create" static methods for all of these types.  The advantage of POD is that they can easily be accessed from array structures mapped from storage, network, or to the GPU.  This will also enable more convenient use of SIMD operations affecting multiple instances of these objects.
+The Kraken math library has been broken out into a separate project, [Hydra](https://github.com/KrakenEngine/hydra).  The CMake scripts statically link this in Kraken runtime builds; however, it can now be used indepedently as well.  As part of this refactoring, I have changed all Hydra datatypes to POD data types.  This means we can't have constructors and destructors, so I have implemented "Create" static methods for all of these types.  The advantage of POD is that they can easily be accessed from array structures mapped from storage, network, or to the GPU.  This will also enable more convenient use of SIMD operations affecting multiple instances of these objects.
 
 ## Source Branches
 
