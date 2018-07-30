@@ -18,7 +18,7 @@ The Kraken math library has been broken out into a separate project, [Hydra](htt
 
 I have simplified the branches to track the main areas of work:
 
-* **feature-metal** for implementation of a modernized Metal-based ios and macOS back-end.
+* **feature-metal** for implementation of a modernized Metal-based iOS and macOS back-end.
 * **feature-vulkan** for implementation of a modernized Vulkan-based Windows, Linux, and Android back-end.
 * **feature-gltf** for implementation of [Khronos GLTF](https://www.khronos.org/gltf/) scene format support.
 
