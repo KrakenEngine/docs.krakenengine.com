@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title></title>
+        <description>Kraken Engine SDK Documentation</description>
+        <link>https://docs.krakenengine.com/</link>
+        <atom:link href="https://docs.krakenengine.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Tue, 06 Aug 2019 02:10:38 +0000</pubDate>
+        <lastBuildDate>Tue, 06 Aug 2019 02:10:38 +0000</lastBuildDate>
+        <generator>Jekyll v3.6.0</generator>
+        
+        <item>
+            <title>Source Branches, Hydra Math Library, Asynchronous API</title>
+            <description>&lt;h2 id=&quot;build-system-update&quot;&gt;Build System Update&lt;/h2&gt;
+
+&lt;p&gt;The dust is starting to settle after setting up CMake to build the Kraken runtime library.  I’ve integrated continuous integration, using VisualStudio Online for Windows and Travis CI for other platforms.  Once the project is a bit further along, I will likely spin up bespoke CI and test infrastructure so that I can get controlled performance regression checking tests integrated.  It is essential to enable anyone to replicate the Kraken runtime builds on their own; however, I also indend to distribute pre-built binaries for anyone that prefers.&lt;/p&gt;
+
+&lt;h2 id=&quot;hello-hydra&quot;&gt;Hello, Hydra&lt;/h2&gt;
+
+&lt;p&gt;The Kraken math library has been broken out into a separate project, &lt;a href=&quot;https://github.com/KrakenEngine/hydra&quot;&gt;Hydra&lt;/a&gt;.  The CMake scripts statically link this in Kraken runtime builds; however, it can now be used indepedently as well.  As part of this refactoring, I have changed all Hydra datatypes to POD data types.  This means we can’t have constructors and destructors, so I have implemented “Create” static methods for all of these types.  The advantage of POD is that they can easily be accessed from array structures mapped from storage, network, or to the GPU.  This will also enable more convenient use of SIMD operations affecting multiple instances of these objects.&lt;/p&gt;
+
+&lt;h2 id=&quot;source-branches&quot;&gt;Source Branches&lt;/h2&gt;
+
+&lt;p&gt;I have simplified the branches to track the main areas of work:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;feature-metal&lt;/strong&gt; for implementation of a modernized Metal-based iOS and macOS back-end.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;feature-vulkan&lt;/strong&gt; for implementation of a modernized Vulkan-based Windows, Linux, and Android back-end.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;feature-gltf&lt;/strong&gt; for implementation of &lt;a href=&quot;https://www.khronos.org/gltf/&quot;&gt;Khronos GLTF&lt;/a&gt; scene format support.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The Metal and Vulkan back-ends will require new shaders and significant changes to the rendering pipeline.  As the existing code is updated, I will be replacing it with a purely PBR based lighting model.&lt;/p&gt;
+
+&lt;h2 id=&quot;asynchronous-api-design&quot;&gt;Asynchronous API Design&lt;/h2&gt;
+
+&lt;p&gt;I have been giving a lot of thought into API Design recently, as Kraken grows into a more disciplined, stable, and documented interface.  A design-goal of this interface is be to express the asynchronous nature of Kraken’s rendering and audio threads explicitly.  Scene graph changes will be asynchronous – the primary interaction with Kraken’s runtime will be the submission of an asynchronously executed, transactional command buffer.  The transactions themselves will be simple POD types composed of Hydra primitives.  They will be easily reused, composed on multiple threads, and require no heap memory allocations.&lt;/p&gt;
+
+&lt;p&gt;If the calling thread blocks or does not submit new commands for a frame, Kraken must have a defined behavior and continue operating in a reasonable manner.  This should reduce the reliance of VR runtime fallbacks, such as synthesis of frames through reprojection.&lt;/p&gt;
+</description>
+            <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
+            <link>https://docs.krakenengine.com/2018-07-29-kraken-update</link>
+            <guid isPermaLink="true">https://docs.krakenengine.com/2018-07-29-kraken-update</guid>
+            
+            <category>news</category>
+            
+            
+        </item>
+        
+        <item>
+            <title>Kraken Engine Docs Update</title>
+            <description>&lt;h2 id=&quot;work-in-progress&quot;&gt;Work in progress&lt;/h2&gt;
+
+&lt;p&gt;I’ve stripped out most of the template content and set up a rough idea of the content that will be covered in the docs.  Note that this is expected to change (possibly drastically), before the first stable release of Kraken is ready.  This site will be accompanied by a set of ready-to-run example projects that I will keep updated with the latest runtime.&lt;/p&gt;
+
+&lt;h2 id=&quot;github-details&quot;&gt;GitHub Details&lt;/h2&gt;
+
+&lt;p&gt;The source for Kraken Engine is now hosted on &lt;a href=&quot;https://github.com/KrakenEngine/kraken&quot;&gt;Github repo&lt;/a&gt; in a &lt;a href=&quot;https://github.com/krakenengine&quot;&gt;‘Kraken Engine’ GitHub Organization&lt;/a&gt; to keep the various repositories organized together.  The source of this site and the main &lt;a href=&quot;https://krakenengine.com&quot;&gt;krakenengine.com&lt;/a&gt; site will be hosted there as well.  I am not looking for additional contributors until the Kraken codebase is a bit more stable; however, PR’s, issues, and any other kind of feedback is always greatly appreciated.  If you have branched Kraken and would like to upstream some changes, please reach out to me at &lt;a href=&quot;mailto:kearwood@kearwood.com&quot;&gt;kearwood@kearwood.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;jekyll-theme&quot;&gt;Jekyll Theme&lt;/h2&gt;
+
+&lt;p&gt;This site is being built in &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; using the &lt;a href=&quot;http://idratherbewriting.com/documentation-theme-jekyll/&quot;&gt;Documentation Theme for Jeckyll&lt;/a&gt;.  This amazing work by &lt;a href=&quot;http://idratherbewriting.com/aboutme/&quot;&gt;Tom Johnson&lt;/a&gt; and the Jekyll folks has made it so easy to get such a robust site up quickly.&lt;/p&gt;
+
+&lt;h2 id=&quot;next-up&quot;&gt;Next Up&lt;/h2&gt;
+
+&lt;p&gt;Stay tuned as I start to fill in the sections of these docs one by one.  I look forward to your reviews and feedback so we can make Kraken Engine more useful to everyone.&lt;/p&gt;
+</description>
+            <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
+            <link>https://docs.krakenengine.com/kraken-docs-wip-1</link>
+            <guid isPermaLink="true">https://docs.krakenengine.com/kraken-docs-wip-1</guid>
+            
+            <category>news</category>
+            
+            
+        </item>
+        
+        <item>
+            <title>Kraken Engine Docs Site</title>
+            <description>&lt;h2 id=&quot;kraken-engine-documentation-site&quot;&gt;Kraken Engine Documentation Site&lt;/h2&gt;
+
+&lt;p&gt;This site will hold documentation for the Kraken Game Engine.  There is a lot of template content loaded now, which will be replaced.&lt;/p&gt;
+
+&lt;p&gt;I plan to update this site incrementally as various parts of the Kraken API stabilize and new examples are written.&lt;/p&gt;
+
+&lt;p&gt;Please check back again soon for updates!&lt;/p&gt;
+</description>
+            <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
+            <link>https://docs.krakenengine.com/kraken-docs-launch</link>
+            <guid isPermaLink="true">https://docs.krakenengine.com/kraken-docs-launch</guid>
+            
+            <category>news</category>
+            
+            
+        </item>
+        
+    </channel>
+</rss>
