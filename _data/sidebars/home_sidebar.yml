@@ -160,30 +160,42 @@ entries:
     - title: Implementing Behaviors
       url: /sdk_api_behaviors.html
       output: web
-  - title: C++ Math Library
+  - title: Hydra Math Library
     output: web
     folderitems:
+    - title: Hydra Introduction
+      url: /sdk_hydra_introduction
+      output: web
     - title: kraken::scalar
-      url: /sdk_math_scalar.html
+      url: /sdk_hydra_scalar
       output: web
     - title: kraken::vector2
-      url: /sdk_math_vector2.html
+      url: /sdk_hydra_vector2
+      output: web
+    - title: kraken::vector2i
+      url: /sdk_hydra_vector2i
       output: web
     - title: kraken::vector3
-      url: /sdk_math_vector3.html
+      url: /sdk_hydra_vector3
       output: web
     - title: kraken::vector4
-      url: /sdk_math_vector4.html
+      url: /sdk_hydra_vector4
       output: web
     - title: kraken::triangle3
-      url: /sdk_math_triangle3.html
+      url: /sdk_hydra_triangle3
       output: web
     - title: kraken::quaternion
-      url: /sdk_math_quaternion.html
+      url: /sdk_hydra_quaternion
+      output: web
+    - title: kraken::matrix2
+      url: /sdk_hydra_matrix2
+      output: web
+    - title: kraken::matrix2x3
+      url: /sdk_hydra_matrix2x3
       output: web
     - title: kraken::matrix4
-      url: /sdk_math_matrix4.html
+      url: /sdk_hydra_matrix4
       output: web
     - title: kraken::aabb
-      url: /sdk_math_aabb.html
+      url: /sdk_hydra_aabb
       output: web
